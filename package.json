@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-v2",
+  "version": "1.0.0",
+  "description": "A new portfolio to impress all who view it.",
+  "main": "index.js",
+  "homepage": "https://malikmalna.github.io/portfolio-v2",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:MalikMAlna/portfolio-v2.git"
+  },
+  "author": "Malik (Mike)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MalikMAlna/portfolio-v2/issues"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "node-sass": "^6.0.1"
+  }
+}
