@@ -1,0 +1,232 @@
+@import "config";
+
+// Widescreens
+@include mediaXl {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Desktops & Laptops
+@include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+  main {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  }
+
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+
+    .portrait {
+      background: url("../img/portrait_small.jpg");
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+// Smartphones
+@include mediaSm {
+  main#home h1 {
+    margin-top: 8vh;
+
+    &.lg-heading {
+      font-size: 5rem;
+    }
+  }
+
+  main#about h1 {
+    margin-top: 8vh;
+
+    &.lg-heading {
+      font-size: 5rem;
+    }
+  }
+
+  main#work h1 {
+    margin-top: 5vh;
+
+    &.lg-heading {
+      padding-bottom: 1rem;
+      font-size: 4.75rem;
+    }
+  }
+
+  main#contact h1 {
+    margin-top: 5vh;
+
+    &.lg-heading {
+      padding-bottom: 1rem;
+      font-size: 4.75rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.15rem;
+
+    &.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem;
+    }
+  }
+
+  div.menu-btn {
+    right: 25px;
+    top: 25px;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .job {
+    padding-left: 5rem;
+  }
+
+  div.bio > p {
+    font-size: 22px;
+  }
+
+  // Contact Page Responsiveness
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    div {
+      font-size: 1rem;
+      border: 3px set-text-color($primary-color) solid;
+      padding: 0.75rem 1rem;
+      margin-bottom: 3rem;
+
+      &:hover {
+        background: $secondary-color;
+        padding: 1.5rem 2.5rem;
+        @include easeOut;
+        .text-secondary {
+          color: set-text-color($secondary-color);
+        }
+        a {
+          color: set-text-color($secondary-color);
+        }
+      }
+    }
+  }
+
+  // Paragraph Text Stuffs
+  p,
+  ul,
+  li {
+    font-size: medium;
+    margin-left: -0.3rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Smaller Smartphones
+@include mediaXs {
+  main#home h1 {
+    margin-top: 10vh;
+
+    &.lg-heading {
+      padding-bottom: 1rem;
+      font-size: 2.8rem;
+      line-height: 1.1;
+    }
+  }
+
+  main#contact h1 {
+    margin-top: 5vh;
+
+    &.lg-heading {
+      padding-bottom: 1rem;
+      font-size: 4rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    &.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem;
+    }
+  }
+  main {
+    padding: 3.25rem;
+    min-height: calc(100vh - 50px);
+
+    .icons {
+      margin-top: 1rem;
+
+      a {
+        padding: 0.02rem;
+        margin-left: 0.55rem;
+
+        &:hover {
+          color: $secondary-color;
+          @include easeOut();
+        }
+      }
+    }
+    &#home {
+      overflow: hidden;
+      h1 {
+        margin-top: 20vh;
+      }
+    }
+  }
+}
